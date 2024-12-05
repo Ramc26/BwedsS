@@ -1,0 +1,189 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #39375B; /* Page background color */
+    color: #F5B0CB; /* Default text color */
+    margin: 0;
+    font-size: 1rem; /* Default base font size */
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  /* Section Styling */
+  section {
+    padding: 20px 0;
+    background-color: #39375B; /* Apply background color to all sections */
+  }
+  
+  /* Welcome Section */
+  #welcome {
+    background: url('images/couple.jpg') no-repeat center center/cover;
+    position: relative;
+  }
+  
+  #welcome .overlay {
+    background: rgba(57, 55, 91, 0.8); /* Dark overlay */
+    z-index: 1;
+  }
+  
+  #welcome .container {
+    z-index: 2;
+  }
+  
+  #welcome h1, #welcome p, #welcome #countdown {
+    color: #F5B0CB;
+  }
+  
+  /* Profile Images */
+  .profile-img {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .profile-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Text Colors */
+  h2, h3 {
+    color: #E6D9A2;
+  }
+  
+  p {
+    color: #F5B0CB;
+  }
+  
+  /* When and Where Section */
+  #venue h2 {
+    color: #E6D9A2;
+  }
+  
+  #venue h3 {
+    color: #D597CE;
+  }
+  
+  #venue .col-md-2 h1 {
+    font-size: 50px;
+    color: #F5B0CB;
+  }
+  
+  #venue hr {
+    border-top: 2px solid #F5B0CB;
+  }
+  
+  /* Invitation Section */
+  #invite h2 {
+    color: #E6D9A2;
+  }
+  
+  #invite h3 {
+    color: #D597CE;
+  }
+  
+  #invite p {
+    color: #F5B0CB;
+  }
+  
+  /* Gallery Section */
+  #gallery h2 {
+    color: #E6D9A2;
+  }
+  
+  .carousel-inner img {
+    border-radius: 15px;
+    /* width: 50%;
+    height: 500px; Fixed height for all carousel images */
+    object-fit: cover; /* Ensures images cover the entire area without distortion */
+  }
+  .carousel-image {
+    width: 100%;
+    height: 650px; /* Fixed height */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+  }
+  
+  
+  /* Contact Section */
+  #contact h2 {
+    color: #E6D9A2;
+  }
+  
+  #contact p {
+    color: #F5B0CB;
+  }
+  
+  /* Divider Styling */
+  .divider {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .divider img {
+    width: 75%;
+    height: auto;
+    max-width: 500px; /* Adjust as needed */
+  }
+  
+  /* Separator Styling within Where & When Section */
+  .separator {
+    font-size: 50px;
+    color: #F5B0CB;
+    line-height: 1;
+  }
+  
+  .separator hr {
+    border-top: 2px solid #F5B0CB;
+    width: 50%;
+    margin: 10px auto;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #venue .col-md-2 h1 {
+      display: none;
+    }
+  
+    #venue hr {
+      display: block;
+    }
+  
+    /* Adjust profile image on smaller screens */
+    .profile-img {
+      max-width: 300px;
+    }
+
+    .carousel-image {
+        height: 300px;
+      }
+  
+    /* Adjust separator for small screens */
+    .separator {
+      display: none;
+    }
+  
+    .separator + hr {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    /* Increase base font size on small screens */
+    body {
+      font-size: 1.1rem;
+    }
+  }
+  
