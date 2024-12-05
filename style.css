@@ -3,7 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     background-color: #39375B; /* Page background color */
-    color: #F5B0CB; /* Default text color */
+    color: ivory; /* Default text color */
     margin: 0;
     font-size: 1rem; /* Default base font size */
   }
@@ -20,12 +20,12 @@ body {
   
   /* Welcome Section */
   #welcome {
-    background: url('images/couple.jpg') no-repeat center center/cover;
+    background: url('images/couple1.jpg') no-repeat center center/cover;
     position: relative;
   }
   
   #welcome .overlay {
-    background: rgba(57, 55, 91, 0.8); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
     z-index: 1;
   }
   
@@ -33,10 +33,13 @@ body {
     z-index: 2;
   }
   
-  #welcome h1, #welcome p, #welcome #countdown {
+  #welcome h1, #welcome {
     color: #F5B0CB;
   }
   
+  #countdown {
+    color: ivory;
+  }
   /* Profile Images */
   .profile-img {
     width: 100%;
@@ -64,9 +67,9 @@ body {
     color: #E6D9A2;
   }
   
-  p {
+  /* p {
     color: #F5B0CB;
-  }
+  } */
   
   /* When and Where Section */
   #venue h2 {
