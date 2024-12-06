@@ -54,7 +54,7 @@
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 2rem; /* Increased spacing below the sloka */
-    white-space: pre-line; /* Allows '\n' to create line breaks */
+    white-space: pre-wrap; /* Changed from pre-line to pre-wrap */
     word-break: keep-all; /* Prevents word breaking */
     padding: 0 20px; /* Add padding to prevent text from touching edges */
     text-align: center; /* Center align the sloka for better aesthetics */
