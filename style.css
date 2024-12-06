@@ -54,6 +54,8 @@
     font-size: 1.2rem;
     margin-bottom: 2rem; /* Increased spacing below the sloka */
     white-space: pre-line; /* Allows '\n' to create line breaks */
+    word-break: keep-all; /* Prevents word breaking */
+    padding: 0 20px; /* Add padding to prevent text from touching edges */
   }
 
   /* Top Items Styling */
@@ -225,8 +227,8 @@
     }
 
     .carousel-image {
-        height: 300px;
-      }
+      height: 300px;
+    }
 
     /* Adjust separator for small screens */
     .separator {
@@ -242,10 +244,11 @@
       width: 100%;
     }
 
-    /* Reduce sloka font size on smaller screens */
+    /* Adjust sloka styling */
     .sloka {
-      font-size: 0.8rem;
+      font-size: 1rem; /* Slightly larger font for readability */
       margin-bottom: 1.5rem;
+      padding: 0 10px; /* Add padding to prevent text from touching edges */
     }
     
     /* Adjust top-items for smaller screens */

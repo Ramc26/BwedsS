@@ -22,7 +22,6 @@
     setInterval(countdown, 1000);
     countdown();
   });
-
   $(document).ready(function() {
     // Typing Effect for Sloka
     function typeText(element, text, speed, callback) {
@@ -44,7 +43,7 @@
       type();
     }
   
-    // Get the sloka text with a newline character
+    // Get the sloka text with newline characters
     const slokaText = `ఇయం సీత మమ సుతా సహ ధర్మచారిణి తవ।
   ప్రతిచ్ఛ చేను భద్రం తే పాణిం గృహ్ణీష్వ పాణినా॥`;
   
@@ -62,4 +61,4 @@
     // Initialize fade-in classes
     $('.middle-content, .bottom-content').addClass('fade-in');
   });
-
+  
