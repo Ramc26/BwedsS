@@ -248,7 +248,7 @@
 
     /* Adjust sloka styling */
     .sloka {
-      font-size: 0.8rem; /* Slightly larger font for readability */
+      font-size: 1rem; /* Slightly larger font for readability */
       margin-bottom: 1.5rem;
       padding: 0 10px; /* Add padding to prevent text from touching edges */
       text-align: center; /* Ensure centered text */
