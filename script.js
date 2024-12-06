@@ -42,8 +42,8 @@ $(document).ready(function() {
         $('.bottom-content').addClass('visible');
       }, 1000); // Adjust delay as needed
 
-      // Show the Play button after sloka typing is complete
-      $('#audio-control-button').fadeIn(500); // Fade in over 0.5 seconds
+      // Show the Play and Translate buttons after sloka typing is complete
+      $('#audio-control-button, .translate-button').fadeIn(500); // Fade in over 0.5 seconds
     }
   });
 
@@ -88,5 +88,23 @@ $(document).ready(function() {
         $('#audio-control-button').attr('aria-label', 'Mute Music');
       }
     }
+
+    // Save user preference to localStorage
+    localStorage.setItem('isMuted', isMuted);
   });
+
+  // ------------- LANGUAGE SWITCHING FUNCTIONALITY ------------- //
+  // Function to switch languages
+  function switchLanguage(lang) {
+    const elements = document.querySelectorAll('[data-lang]');
+    elements.forEach(el => {
+      if (el.getAttribute('data-lang') === lang) {
+        el.style.display = 'block';
+      } else {
+        el.style.display = 'none';
+      }
+    });
+  }
+
+  // Optional: Set default language based on browser settings or user preference
 });

@@ -1,304 +1,335 @@
-  /* Global Styles */
-  body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    background-color: #39375B; /* Page background color */
-    color: ivory; /* Default text color */
-    margin: 0;
-    font-size: 1rem; /* Default base font size */
-  }
-  img {
-    pointer-events: none;
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: #39375B; /* Page background color */
+  color: ivory; /* Default text color */
+  margin: 0;
+  font-size: 1rem; /* Default base font size */
 }
-  h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-  }
 
-  /* Section Styling */
-  section {
-    padding: 20px 0;
-    background-color: #39375B; /* Apply background color to all sections */
-  }
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
 
-  /* Welcome Section */
-  #welcome {
-    background: url('images/couple1.jpg') no-repeat center center/cover;
-    position: relative;
-  }
+/* Section Styling */
+section {
+  padding: 20px 0;
+  background-color: #39375B; /* Apply background color to all sections */
+}
 
-  #welcome .overlay {
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+/* Welcome Section */
+#welcome {
+  background: url('images/couple1.jpg') no-repeat center center/cover;
+  position: relative;
+}
 
-  #welcome .container {
-    z-index: 2;
-    height: 100%;
-  }
+#welcome .overlay {
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
-  #welcome h1, #welcome {
-    color: #F5B0CB;
-  }
+#welcome .container {
+  z-index: 2;
+  height: 100%;
+}
 
-  #countdown {
-    color: ivory;
-  }
+#welcome h1, #welcome {
+  color: #F5B0CB;
+}
 
-  /* Telugu Sloka Styling */
-  .sloka {
-    font-family: 'Anek Telugu', sans-serif; /* Original Anek Telugu (Commented Out) */
-    /* font-family: 'Noto Sans Telugu', sans-serif; New Font */
-    color: #FFD700; /* Orangish-yellow color */
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 2rem; /* Increased spacing below the sloka */
-    white-space: pre-wrap; /* Allows text to wrap naturally */
-    word-break: keep-all; /* Prevents word breaking */
-    padding: 0 20px; /* Add padding to prevent text from touching edges */
-    text-align: center; /* Center align the sloka for better aesthetics */
-  }
+#countdown {
+  color: ivory;
+}
 
-  /* Top Items Styling */
-  .top-items .top-text {
-    font-size: 1.2rem;
-    color: #FFD700; /* Orangish-yellow color */
-    font-weight: bold;
-  }
+/* Telugu Sloka Styling */
+.sloka {
+  font-family: 'Anek Telugu', sans-serif; /* Original Anek Telugu (Commented Out) */
+  /* font-family: 'Noto Sans Telugu', sans-serif; New Font */
+  color: #FFD700; /* Orangish-yellow color */
+  /* font-weight: bold; */
+  font-size: 1.2rem;
+  margin-bottom: 2rem; /* Increased spacing below the sloka */
+  white-space: pre-wrap; /* Allows text to wrap naturally */
+  word-break: keep-all; /* Prevents word breaking */
+  padding: 0 20px; /* Add padding to prevent text from touching edges */
+  text-align: center; /* Center align the sloka for better aesthetics */
+}
 
-  .top-items .bottom-text {
-    font-size: 1.2rem;
-    color: #FFD700; /* Orangish-yellow color */
-    font-weight: bold;
-  }
+/* Top Items Styling */
+.top-items .top-text {
+  font-size: 1.2rem;
+  color: #FFD700; /* Orangish-yellow color */
+  font-weight: bold;
+}
 
-  .top-items .top-image {
-    max-width: 100px; /* Adjust size as needed */
-    height: auto;
-    border-radius: 50%; /* Makes the image circular */
-  }
+.top-items .bottom-text {
+  font-size: 1.2rem;
+  color: #FFD700; /* Orangish-yellow color */
+  font-weight: bold;
+}
 
-  /* Fade In Effect */
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+.top-items .top-image {
+  max-width: 100px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 50%; /* Makes the image circular */
+}
 
-  /* Apply Fade In to Middle Content */
-  .middle-content {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 3s; /* Starts after sloka typing */
-  }
+/* Fade In Effect */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-  /* Apply Fade In to Bottom Content */
-  .bottom-content {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 4s; /* Starts after names and timer fade in */
-  }
+/* Apply Fade In to Middle Content */
+.middle-content {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 3s; /* Starts after sloka typing */
+}
 
-  /* Profile Images */
-  .profile-img {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+/* Apply Fade In to Bottom Content */
+.bottom-content {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 4s; /* Starts after names and timer fade in */
+}
 
-  .profile-img img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
+/* Profile Images */
+.profile-img {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-  .profile-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  }
+.profile-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
-  /* Text Colors */
-  h2, h3 {
-    color: #E6D9A2;
-  }
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
 
-  /* When and Where Section */
-  #venue h2 {
-    color: #E6D9A2;
-  }
+/* Text Colors */
+h2, h3 {
+  color: #E6D9A2;
+}
 
-  #venue h3 {
-    color: #D597CE;
-  }
+/* When and Where Section */
+#venue h2 {
+  color: #E6D9A2;
+}
 
+#venue h3 {
+  color: #D597CE;
+}
+
+#venue .col-md-2 h1 {
+  font-size: 50px;
+  color: #F5B0CB;
+}
+
+#venue hr {
+  border-top: 2px solid #F5B0CB;
+}
+
+/* Invitation Section */
+#invite h2 {
+  color: #E6D9A2;
+}
+
+#invite h3 {
+  color: #D597CE;
+}
+
+#invite p {
+  color: #F5B0CB;
+}
+
+/* Gallery Section */
+#gallery h2 {
+  color: #E6D9A2;
+}
+
+.carousel-inner img {
+  border-radius: 15px;
+  object-fit: cover; /* Ensures images cover the entire area without distortion */
+}
+
+.carousel-image {
+  width: 100%;
+  height: 650px; /* Fixed height */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* Contact Section */
+#contact h2 {
+  color: #E6D9A2;
+}
+
+#contact p {
+  color: #F5B0CB;
+}
+
+/* Divider Styling */
+.divider {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.divider img {
+  width: 75%;
+  height: auto;
+  max-width: 500px; /* Adjust as needed */
+}
+
+/* Separator Styling within Where & When Section */
+.separator {
+  font-size: 50px;
+  color: #F5B0CB;
+  line-height: 1;
+}
+
+.separator hr {
+  border-top: 2px solid #F5B0CB;
+  width: 50%;
+  margin: 10px auto;
+}
+
+/* Kalyanam Image Styling */
+.kalyanam {
+  width: 50%;
+  height: auto;
+}
+
+/* Audio Control Button Styling */
+.audio-control-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  outline: none;
+  z-index: 1000;
+  color: #FFD700; /* Gold color to match theme */
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+  display: none; /* Hidden initially, shown after sloka completes */
+}
+
+.audio-control-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.audio-control-button i {
+  width: 24px;
+  height: 24px;
+}
+
+/* Floating Translate Button Styling */
+.translate-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  outline: none;
+  z-index: 1000;
+  color: #FFD700; /* Gold color to match theme */
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+  display: none; /* Hidden initially, shown after sloka completes */
+}
+
+.translate-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.translate-button i {
+  width: 24px;
+  height: 24px;
+}
+
+/* Accessibility: Focus Styles */
+.audio-control-button:focus, .translate-button:focus {
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5); /* Gold glow on focus */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   #venue .col-md-2 h1 {
-    font-size: 50px;
-    color: #F5B0CB;
+    display: none;
   }
 
   #venue hr {
-    border-top: 2px solid #F5B0CB;
+    display: block;
   }
 
-  /* Invitation Section */
-  #invite h2 {
-    color: #E6D9A2;
-  }
-
-  #invite h3 {
-    color: #D597CE;
-  }
-
-  #invite p {
-    color: #F5B0CB;
-  }
-
-  /* Gallery Section */
-  #gallery h2 {
-    color: #E6D9A2;
-  }
-
-  .carousel-inner img {
-    border-radius: 15px;
-    object-fit: cover; /* Ensures images cover the entire area without distortion */
+  /* Adjust profile image on smaller screens */
+  .profile-img {
+    max-width: 300px;
   }
 
   .carousel-image {
-    width: 100%;
-    height: 650px; /* Fixed height */
-    object-fit: cover; /* Ensures the image covers the container without distortion */
+    height: 300px;
   }
 
-  /* Contact Section */
-  #contact h2 {
-    color: #E6D9A2;
-  }
-
-  #contact p {
-    color: #F5B0CB;
-  }
-
-  /* Divider Styling */
-  .divider {
-    text-align: center;
-    margin: 0px 0;
-  }
-
-  .divider img {
-    width: 50%;
-    height: auto;
-    max-width: 250px; /* Adjust as needed */
-  }
-
-  /* Separator Styling within Where & When Section */
+  /* Adjust separator for small screens */
   .separator {
-    font-size: 50px;
-    color: #F5B0CB;
-    line-height: 1;
+    display: none;
   }
 
-  .separator hr {
-    border-top: 2px solid #F5B0CB;
-    width: 50%;
-    margin: 10px auto;
+  .separator + hr {
+    display: block;
   }
 
-  /* Kalyanam Image Styling */
+  /* Adjust Kalyanam Image to full width on smaller screens */
   .kalyanam {
-    width: 50%;
-    height: auto;
+    width: 100%;
   }
 
-  /* Audio Control Button Styling */
-  .audio-control-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    outline: none;
-    z-index: 1000;
-    color: #FFD700; /* Gold color to match theme */
-    transition: background 0.3s, color 0.3s, transform 0.3s;
+  /* Adjust sloka styling */
+  .sloka {
+    font-size: 1rem; /* Slightly larger font for readability */
+    margin-bottom: 1.5rem;
+    padding: 0 10px; /* Add padding to prevent text from touching edges */
+    text-align: center; /* Ensure centered text */
   }
-
-  .audio-control-button:hover {
-    background: rgba(0, 0, 0, 0.7);
-    transform: scale(1.1);
+  
+  /* Adjust top-items for smaller screens */
+  .top-items .top-text {
+    font-size: 1.0rem;
   }
-
-  .audio-control-button i {
-    width: 24px;
-    height: 24px;
+  
+  .top-items .bottom-text {
+    font-size: 1rem;
   }
-
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    #venue .col-md-2 h1 {
-      display: none;
-    }
-
-    #venue hr {
-      display: block;
-    }
-
-    /* Adjust profile image on smaller screens */
-    .profile-img {
-      max-width: 300px;
-    }
-
-    .carousel-image {
-      height: 300px;
-    }
-
-    /* Adjust separator for small screens */
-    .separator {
-      display: none;
-    }
-
-    .separator + hr {
-      display: block;
-    }
-
-    /* Adjust Kalyanam Image to full width on smaller screens */
-    .kalyanam {
-      width: 100%;
-    }
-
-    /* Adjust sloka styling */
-    .sloka {
-      font-size: 1rem; /* Slightly larger font for readability */
-      margin-bottom: 1.5rem;
-      padding: 0 5px; /* Add padding to prevent text from touching edges */
-      text-align: center; /* Ensure centered text */
-    }
-    
-    /* Adjust top-items for smaller screens */
-    .top-items .top-text {
-      font-size: 1.0rem;
-    }
-    
-    .top-items .bottom-text {
-      font-size: 1rem;
-    }
-    
-    .top-items .top-image {
-      max-width: 50px;
-    }
+  
+  .top-items .top-image {
+    max-width: 50px;
   }
+}
 
-  @media (max-width: 576px) {
-    /* Increase base font size on small screens */
-    body {
-      font-size: 1.1rem;
-    }
+@media (max-width: 576px) {
+  /* Increase base font size on small screens */
+  body {
+    font-size: 1.1rem;
   }
+}
