@@ -7,7 +7,9 @@
     margin: 0;
     font-size: 1rem; /* Default base font size */
   }
-
+  img {
+    pointer-events: none;
+}
   h1, h2, h3 {
     font-family: 'Playfair Display', serif;
   }
@@ -48,13 +50,13 @@
 
   /* Telugu Sloka Styling */
   .sloka {
-    /* font-family: 'Anek Telugu', sans-serif; */ /* Original Anek Telugu (Commented Out) */
-    font-family: 'Noto Sans Telugu', sans-serif; /* New Font */
+    font-family: 'Anek Telugu', sans-serif; /* Original Anek Telugu (Commented Out) */
+    /* font-family: 'Noto Sans Telugu', sans-serif; New Font */
     color: #FFD700; /* Orangish-yellow color */
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 2rem; /* Increased spacing below the sloka */
-    white-space: pre-wrap; /* Changed from pre-line to pre-wrap */
+    white-space: pre-wrap; /* Allows text to wrap naturally */
     word-break: keep-all; /* Prevents word breaking */
     padding: 0 20px; /* Add padding to prevent text from touching edges */
     text-align: center; /* Center align the sloka for better aesthetics */
@@ -185,13 +187,13 @@
   /* Divider Styling */
   .divider {
     text-align: center;
-    margin: 20px 0;
+    margin: 0px 0;
   }
 
   .divider img {
-    width: 75%;
+    width: 50%;
     height: auto;
-    max-width: 500px; /* Adjust as needed */
+    max-width: 250px; /* Adjust as needed */
   }
 
   /* Separator Styling within Where & When Section */
@@ -211,6 +213,32 @@
   .kalyanam {
     width: 50%;
     height: auto;
+  }
+
+  /* Audio Control Button Styling */
+  .audio-control-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    z-index: 1000;
+    color: #FFD700; /* Gold color to match theme */
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+  }
+
+  .audio-control-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+  }
+
+  .audio-control-button i {
+    width: 24px;
+    height: 24px;
   }
 
   /* Responsive Adjustments */
@@ -250,7 +278,7 @@
     .sloka {
       font-size: 1rem; /* Slightly larger font for readability */
       margin-bottom: 1.5rem;
-      padding: 0 10px; /* Add padding to prevent text from touching edges */
+      padding: 0 5px; /* Add padding to prevent text from touching edges */
       text-align: center; /* Ensure centered text */
     }
     

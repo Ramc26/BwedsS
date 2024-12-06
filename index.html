@@ -9,6 +9,9 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap" rel="stylesheet">
   
   <!-- Original Anek Telugu (Commented Out) -->
-  <!--
   <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&display=swap" rel="stylesheet">
-  -->
   
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   
@@ -30,16 +31,6 @@
   <!-- Background Music -->
   <audio id="my_audio" src="images/audio.mp3" loop></audio>
 
-  <script>
-    // Detect scroll and play audio
-    window.onscroll = function() {
-      var audio = document.getElementById("my_audio");
-      if (audio.paused) {
-        audio.play();
-      }
-    };
-  </script>
-  
   <!-- 1. Welcome Section -->
   <section id="welcome" class="vh-100 d-flex flex-column text-white text-center position-relative">
     <div class="overlay position-absolute w-100 h-100"></div>
@@ -57,11 +48,6 @@
             <span class="top-text">శుభమస్తు</span>
           </div>
         </div>
-        <!-- <div class="row justify-content-center align-items-center mt-2">
-          <div class="col-12 text-center">
-            <span class="bottom-text">శుభమస్తు</span>
-          </div>
-        </div> -->
       </div>
       
       <!-- Top Content: Telugu Sloka -->
@@ -87,16 +73,10 @@
     </div>
   </section>
 
-  <!-- Divider -->
-  <!--
-  <div class="divider">
-    <img src="images/divider-1.png" alt="Divider">
-  </div>
-  -->
-
   <!-- 2. Who & Who Section -->
   <section id="who" class="py-5">
     <div class="container text-center">
+      <h2 class="fw-bold mb-4">Bride & Groom</h2><br>
       <div class="row align-items-center">
         <!-- Bride -->
         <div class="col-12 col-md-6 mb-4 mb-md-0">
@@ -257,6 +237,12 @@
       </div>
     </div>
   </section>
+
+  <!-- Floating Play/Mute Button -->
+  <button id="audio-control-button" class="audio-control-button" aria-label="Play Music">
+    <!-- Play Icon (Initial State) -->
+    <i id="audio-icon" class="bi bi-play-fill"></i>
+  </button>
 
   <!-- jQuery and Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
