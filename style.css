@@ -48,7 +48,8 @@
 
   /* Telugu Sloka Styling */
   .sloka {
-    font-family: 'Anek Telugu', sans-serif;
+    /* font-family: 'Anek Telugu', sans-serif; */ /* Original Anek Telugu (Commented Out) */
+    font-family: 'Noto Sans Telugu', sans-serif; /* New Font */
     color: #FFD700; /* Orangish-yellow color */
     font-weight: bold;
     font-size: 1.2rem;
@@ -56,6 +57,7 @@
     white-space: pre-line; /* Allows '\n' to create line breaks */
     word-break: keep-all; /* Prevents word breaking */
     padding: 0 20px; /* Add padding to prevent text from touching edges */
+    text-align: center; /* Center align the sloka for better aesthetics */
   }
 
   /* Top Items Styling */
@@ -246,9 +248,10 @@
 
     /* Adjust sloka styling */
     .sloka {
-      font-size: 1rem; /* Slightly larger font for readability */
+      font-size: 0.8rem; /* Slightly larger font for readability */
       margin-bottom: 1.5rem;
       padding: 0 10px; /* Add padding to prevent text from touching edges */
+      text-align: center; /* Ensure centered text */
     }
     
     /* Adjust top-items for smaller screens */
