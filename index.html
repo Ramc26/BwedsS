@@ -8,28 +8,76 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Playfair+Display:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Background Music -->
+  <audio id="my_audio" src="images/audio.mp3" loop></audio>
+
+  <script>
+    // Detect scroll and play audio
+    window.onscroll = function() {
+      var audio = document.getElementById("my_audio");
+      if (audio.paused) {
+        audio.play();
+      }
+    };
+  </script>
   <!-- 1. Welcome Section -->
-  <section id="welcome" class="vh-100 d-flex align-items-center justify-content-center text-white text-center position-relative">
+  <section id="welcome" class="vh-100 d-flex flex-column text-white text-center position-relative">
     <div class="overlay position-absolute w-100 h-100"></div>
-    <div class="container position-relative">
-      <h1 class="display-4 fw-bold BGNames">Bharathi & Surya</h1>
-      <p class="lead">Wedding Invitation</p>
-      <div id="countdown" class="mt-3" style="color: ivory;">
-        <p class="fs-4">Sumuhurtham:</p>
-        <p class="fs-3 fw-bold" id="timer"></p>
+    <div class="container position-relative d-flex flex-column justify-content-between h-100">
+      <!-- Top Items: శ్రీరస్తు | SivaParvathi.webp | అవిజ్ఞమస్తు -->
+      <div class="top-items mb-4">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-4 text-center">
+            <span class="top-text">శ్రీరస్తు</span>
+          </div>
+          <div class="col-4 text-center">
+            <img src="images/ShivaParvathi.webp" alt="Siva Parvathi" class="img-fluid top-image">
+          </div>
+          <div class="col-4 text-center">
+            <span class="top-text">శుభమస్తు</span>
+          </div>
+        </div>
+        <!-- <div class="row justify-content-center align-items-center mt-2">
+          <div class="col-12 text-center">
+            <span class="bottom-text">శుభమస్తు</span>
+          </div>
+        </div> -->
+      </div>
+      
+      <!-- Top Content: Telugu Sloka -->
+      <div class="top-content">
+        <p class="sloka"></p> <!-- Initially empty; will be populated by JavaScript -->
+      </div>
+      
+      <!-- Middle Content: Heading and Timer -->
+      <div class="middle-content">
+        <h1 class="display-4 fw-bold BGNames">Bharathi & Surya's</h1>
+        <p class="lead">Wedding Invitation</p>
+        <!-- Countdown Timer -->
+        <div id="countdown" class="mt-3">
+          <p class="fs-4">Sumuhurtham:</p>
+          <p class="fs-3 fw-bold" id="timer">76 Days 17 Hrs 8 Min 35 Sec</p>
+        </div>
+      </div>
+      
+      <!-- Bottom Content: Kalyanam Image -->
+      <div class="bottom-content">
+        <img src="images/Kalyanam.jpg" alt="Kalyanam" class="img-fluid kalyanam rounded shadow">
       </div>
     </div>
   </section>
 
-  <!-- Divider -->
+  <!-- Divider
   <div class="divider">
     <img src="images/divider-1.png" alt="Divider">
-  </div>
+  </div> -->
 
   <!-- 2. Who & Who Section -->
   <section id="who" class="py-5">
@@ -40,16 +88,16 @@
           <div class="profile-img mx-auto">
             <img src="images/bride.jpg" alt="Bride" class="img-fluid">
           </div>
-          <h2 class="mt-3">Bharathi</h2>
-          <p>Parents: Mr. & Mrs.<br>Education: B.Tech</p>
+          <h2 class="mt-3">Chi.La.Saw. Ganga Bharathi Bikkina</h2>
+          <p>D/o Venkatarao Bikkina & Krishnaveni Bikkina<br>BTech in ECE</p>
         </div>
         <!-- Groom -->
         <div class="col-12 col-md-6">
           <div class="profile-img mx-auto">
             <img src="images/groom.jpg" alt="Groom" class="img-fluid">
           </div>
-          <h2 class="mt-3">Surya</h2>
-          <p>Parents: Mr. & Mrs.<br>Education: MBA</p>
+          <h2 class="mt-3">Chi. Surya Prakash Gorijala</h2>
+          <p>S/o Venkanna babu Gorijala & Pushpa Seetha Gorijala<br>BTech in Mech</p>
         </div>
       </div>
     </div>
@@ -68,8 +116,8 @@
         <!-- Reception Details -->
         <div class="col-12 col-md-5 mb-4 mb-md-0">
           <h3>Reception</h3>
-          <p>Dinner Time: 7:00 PM</p>
-          <p>Dinner Venue: Grand Palace, Chennai</p>
+          <p>Dinner: Friday, 20th January 2025, 7:00 PM Onwards</p>
+          <p>Venue: Alluri SitaRamaraju Kalyana Mandapam, Jaggampeta</p>
         </div>
 
         <!-- Separator -->
@@ -85,8 +133,8 @@
         <!-- Marriage Details -->
         <div class="col-12 col-md-5">
           <h3>Marriage</h3>
-          <p>Marriage Time: 4:50 AM</p>
-          <p>Marriage Venue: Grand Palace, Chennai</p>
+          <p>Time: Friday, 21st January 2025, 5:05 AM</p>
+          <p>Venue: Alluri SitaRamaraju Kalyana Mandapam, Jaggampeta</p>
         </div>
       </div>
     </div>
@@ -126,9 +174,11 @@
         <!-- Carousel Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
         </button>
       </div>
     </div>
@@ -149,7 +199,7 @@
           <div class="profile-img mx-auto">
             <img src="images/bride_parents.jpg" alt="Your Parents" class="img-fluid">
           </div>
-          <h2 class="mt-3">Mr. & Mrs. Your Parents</h2>
+          <h2 class="mt-3">Sri.Venkatarao Bikkina and Smt.Krishnaveni Bikkina.</h2>
           <p>We invite you to join us in celebrating this joyous occasion.</p>
         </div>
         <!-- Groom's Parents -->
@@ -157,7 +207,7 @@
           <div class="profile-img mx-auto">
             <img src="images/groom_parents.jpg" alt="Groom's Parents" class="img-fluid">
           </div>
-          <h2 class="mt-3">Mr. & Mrs. Groom's Parents</h2>
+          <h2 class="mt-3">Sri.Venkanna babu Gorijala and Smt. Pushpa Seetha Gorijala</h2>
           <p>We look forward to sharing this special day with you.</p>
         </div>
       </div>
@@ -174,18 +224,22 @@
     <div class="container">
       <h2 class="text-center fw-bold mb-4">Contact Us</h2>
       <div class="row text-center">
-        <div class="col-12 col-md-4 mb-3 mb-md-0">
-          <p>Ram: +91-XXXXXX</p>
+        <div class="col-12 col-md-3 mb-3 mb-md-0">
+          <p>Bride's Brother: +91-7095838715</p>
         </div>
-        <div class="col-12 col-md-4 mb-3 mb-md-0">
-          <p>Father: +91-XXXXXX</p>
+        <div class="col-12 col-md-3 mb-3 mb-md-0">
+          <p>Bride's Father: +91-9948521610</p>
         </div>
-        <div class="col-12 col-md-4">
-          <p>Sister: +91-XXXXXX</p>
+        <div class="col-12 col-md-3 mb-3 mb-md-0">
+          <p>Groom: +91-8328651182</p>
+        </div>
+        <div class="col-12 col-md-3">
+          <p>Groom's Father: +91-6370504710</p>
         </div>
       </div>
       <div class="mt-4">
-        <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen class="w-100" height="300"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4819.244673951328!2d82.04319699999999!3d17.183837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDExJzAxLjgiTiA4MsKwMDInMzUuNSJF!5e1!3m2!1sen!2sin!4v1733472385696!5m2!1sen!2sin" allowfullscreen class="w-100" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
       </div>
     </div>
   </section>
