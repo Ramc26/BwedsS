@@ -6,6 +6,7 @@ body {
   color: ivory; /* Default text color */
   margin: 0;
   font-size: 1rem; /* Default base font size */
+  overflow-x: hidden; /* Prevent any accidental horizontal scroll */
 }
 img{
   pointer-events: none;
@@ -51,16 +52,14 @@ section {
 
 /* Telugu Sloka Styling */
 .sloka {
-  font-family: 'Anek Telugu', sans-serif; /* Original Anek Telugu (Commented Out) */
-  /* font-family: 'Noto Sans Telugu', sans-serif; New Font */
+  font-family: 'Anek Telugu', sans-serif; /* Original Anek Telugu */
   color: #FFD700; /* Orangish-yellow color */
-  /* font-weight: bold; */
   font-size: 1.2rem;
   margin-bottom: 2rem; /* Increased spacing below the sloka */
   white-space: pre-wrap; /* Allows text to wrap naturally */
   word-break: keep-all; /* Prevents word breaking */
   padding: 0 20px; /* Add padding to prevent text from touching edges */
-  text-align: center; /* Center align the sloka for better aesthetics */
+  text-align: center; /* Ensure centered text */
 }
 
 /* Top Items Styling */
@@ -330,9 +329,93 @@ h2, h3 {
   }
 }
 
+
+
+.neomorphic-btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #FFD700;
+  background: #39375B;
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  /* Neomorphic shadows */
+  box-shadow: 5px 5px 10px #2f2d4a, -5px -5px 10px #43417C;
+}
+
+.neomorphic-btn i {
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+.neomorphic-btn:hover {
+  /* Slightly lighter or different background on hover */
+  background: #3f3d64; 
+  box-shadow: inset 2px 2px 5px #2f2d4a, inset -2px -2px 5px #43417C;
+  color: #FFD700;
+  transform: scale(1.02);
+}
+
+
 @media (max-width: 576px) {
   /* Increase base font size on small screens */
   body {
     font-size: 1.1rem;
   }
+}
+
+/* NEW CLASSES ADDED BELOW THIS LINE */
+
+/* Neomorphic Timer Box for Countdown Values Only */
+.timer-box {
+  display: inline-block;
+  background: #39375B;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  color: #FFD700;
+  box-shadow: 5px 5px 10px #2f2d4a, -5px -5px 10px #43417C;
+}
+.timer-text {
+  margin: 0;
+  white-space: nowrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Extensions for Buttons */
+.audio-extension, .translate-extension {
+  position: fixed;
+  bottom: 20px;
+  background: rgba(0,0,0,0.5);
+  color: #FFD700;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  z-index: 1000;
+  transform: translateX(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Translate extension to the right of translate button */
+.translate-extension {
+  left: 70px;
+  transform: translateX(-10px); /* start slightly off */
+}
+
+/* Audio extension to the left of audio button */
+.audio-extension {
+  right: 70px;
+  transform: translateX(10px); /* start slightly off */
+}
+
+/* show-extension class to fade them in */
+.show-extension {
+  opacity: 1;
+  transform: translateX(0);
 }

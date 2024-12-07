@@ -1,11 +1,25 @@
 $(document).ready(function() {
-  // Initialize fade-in classes for smooth appearance
+  // Ensure audio and translate buttons are visible from the start
+  $('#audio-control-button, .translate-button').show();
+
+  // Initialize fade-in classes for smooth appearance (from original JS)
   $('.middle-content, .bottom-content').addClass('fade-in');
 
-  // ------------- AUDIO CONTROL BUTTON FUNCTIONALITY ------------- //
   var isPlaying = false; // Track if audio is playing
   var isMuted = false;   // Track if audio is muted
 
+  // Show extensions after page load (from new JS)
+  setTimeout(function() {
+    $('.audio-extension').addClass('show-extension');
+    $('.translate-extension').addClass('show-extension');
+  }, 500); // Show after 0.5s
+
+  setTimeout(function() {
+    $('.audio-extension').removeClass('show-extension');
+    $('.translate-extension').removeClass('show-extension');
+  }, 5500); // Hide after 5 seconds visible (total 5.5s)
+
+  // AUDIO CONTROL BUTTON FUNCTIONALITY (original logic retained)
   $('#audio-control-button').on('click', function() {
     var audio = document.getElementById("my_audio");
     var icon = $('#audio-icon');
@@ -26,28 +40,23 @@ $(document).ready(function() {
         // Mute audio
         audio.muted = true;
         isMuted = true;
-        // Change icon to Mute
         icon.removeClass('bi-volume-up-fill').addClass('bi-volume-mute-fill');
-        // Update ARIA label
         $('#audio-control-button').attr('aria-label', 'Unmute Music');
       } else {
         // Unmute audio
         audio.muted = false;
         isMuted = false;
-        // Change icon back to Volume Up
         icon.removeClass('bi-volume-mute-fill').addClass('bi-volume-up-fill');
-        // Update ARIA label
         $('#audio-control-button').attr('aria-label', 'Mute Music');
       }
     }
 
-    // Save user preference to localStorage
     localStorage.setItem('isMuted', isMuted);
   });
-  
-  // ------------- COUNTDOWN TIMER ------------- //
+
+  // COUNTDOWN TIMER with updated formatting from new JS (`|` separators)
   function countdown() {
-    const eventDate = new Date('2025-02-21T05:05:00'); // Sumuhurtham Date & Time
+    const eventDate = new Date('2025-02-21T05:05:00');
     const now = new Date();
     const diff = eventDate - now;
 
@@ -61,22 +70,21 @@ $(document).ready(function() {
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
-    $('#timer').text(`${days} Days ${hours} Hrs ${minutes} Min ${seconds} Sec`);
+    $('#timer').text(`${days} Days | ${hours} Hrs | ${minutes} Min | ${seconds} Sec`);
   }
 
-  // Update Timer Every Second
+  // Update Timer Every Second (from original JS logic)
   setInterval(countdown, 1000);
   countdown();
   
-  // ------------- TYPING EFFECT FOR SLOKA ------------- //
-  // Initialize Typed.js for Sloka
+  // TYPING EFFECT FOR SLOKA (original logic with fadeIn for buttons restored)
   var typed = new Typed('.sloka', {
     strings: [
       `ఇయం సీత మమ సుతా సహ ధర్మచారిణి తవ।
 ప్రతిచ్ఛ చేను భద్రం తే పాణిం గృహ్ణీష్వ పాణినా॥`
     ],
     typeSpeed: 30,        // Typing speed in milliseconds
-    backSpeed: 0,         // Backspacing speed (not needed here)
+    backSpeed: 0,         // No backspacing needed
     showCursor: false,    // Hide the cursor
     smartBackspace: false, // Disable smart backspace
     onComplete: function(self) {
@@ -89,22 +97,7 @@ $(document).ready(function() {
       }, 1000); // Adjust delay as needed
 
       // Show the Play and Translate buttons after sloka typing is complete
-      $('#audio-control-button, .translate-button').fadeIn(500); // Fade in over 0.5 seconds
+      $('#audio-control-button, .translate-button').fadeIn(500); // Fade them in over 0.5s
     }
   });
-
-  // // ------------- LANGUAGE SWITCHING FUNCTIONALITY ------------- //
-  // // Function to switch languages
-  // function switchLanguage(lang) {
-  //   const elements = document.querySelectorAll('[data-lang]');
-  //   elements.forEach(el => {
-  //     if (el.getAttribute('data-lang') === lang) {
-  //       el.style.display = 'block';
-  //     } else {
-  //       el.style.display = 'none';
-  //     }
-  //   });
-  // }
-
-  // Optional: Set default language based on browser settings or user preference
 });
