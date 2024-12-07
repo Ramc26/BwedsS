@@ -7,6 +7,9 @@ body {
   margin: 0;
   font-size: 1rem; /* Default base font size */
 }
+img{
+  pointer-events: none;
+}
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;

@@ -1,4 +1,50 @@
 $(document).ready(function() {
+  // Initialize fade-in classes for smooth appearance
+  $('.middle-content, .bottom-content').addClass('fade-in');
+
+  // ------------- AUDIO CONTROL BUTTON FUNCTIONALITY ------------- //
+  var isPlaying = false; // Track if audio is playing
+  var isMuted = false;   // Track if audio is muted
+
+  $('#audio-control-button').on('click', function() {
+    var audio = document.getElementById("my_audio");
+    var icon = $('#audio-icon');
+
+    if (!isPlaying) {
+      // Attempt to play audio
+      audio.play().then(function() {
+        isPlaying = true;
+        // Change icon to Mute
+        icon.removeClass('bi-play-fill').addClass('bi-volume-up-fill');
+        // Update ARIA label
+        $('#audio-control-button').attr('aria-label', 'Mute Music');
+      }).catch(function(error) {
+        console.log("Audio playback failed:", error);
+      });
+    } else {
+      if (!isMuted) {
+        // Mute audio
+        audio.muted = true;
+        isMuted = true;
+        // Change icon to Mute
+        icon.removeClass('bi-volume-up-fill').addClass('bi-volume-mute-fill');
+        // Update ARIA label
+        $('#audio-control-button').attr('aria-label', 'Unmute Music');
+      } else {
+        // Unmute audio
+        audio.muted = false;
+        isMuted = false;
+        // Change icon back to Volume Up
+        icon.removeClass('bi-volume-mute-fill').addClass('bi-volume-up-fill');
+        // Update ARIA label
+        $('#audio-control-button').attr('aria-label', 'Mute Music');
+      }
+    }
+
+    // Save user preference to localStorage
+    localStorage.setItem('isMuted', isMuted);
+  });
+  
   // ------------- COUNTDOWN TIMER ------------- //
   function countdown() {
     const eventDate = new Date('2025-02-21T05:05:00'); // Sumuhurtham Date & Time
@@ -47,64 +93,18 @@ $(document).ready(function() {
     }
   });
 
-  // Initialize fade-in classes for smooth appearance
-  $('.middle-content, .bottom-content').addClass('fade-in');
-
-  // ------------- AUDIO CONTROL BUTTON FUNCTIONALITY ------------- //
-  var isPlaying = false; // Track if audio is playing
-  var isMuted = false;   // Track if audio is muted
-
-  $('#audio-control-button').on('click', function() {
-    var audio = document.getElementById("my_audio");
-    var icon = $('#audio-icon');
-
-    if (!isPlaying) {
-      // Attempt to play audio
-      audio.play().then(function() {
-        isPlaying = true;
-        // Change icon to Mute
-        icon.removeClass('bi-play-fill').addClass('bi-volume-up-fill');
-        // Update ARIA label
-        $('#audio-control-button').attr('aria-label', 'Mute Music');
-      }).catch(function(error) {
-        console.log("Audio playback failed:", error);
-      });
-    } else {
-      if (!isMuted) {
-        // Mute audio
-        audio.muted = true;
-        isMuted = true;
-        // Change icon to Mute
-        icon.removeClass('bi-volume-up-fill').addClass('bi-volume-mute-fill');
-        // Update ARIA label
-        $('#audio-control-button').attr('aria-label', 'Unmute Music');
-      } else {
-        // Unmute audio
-        audio.muted = false;
-        isMuted = false;
-        // Change icon back to Volume Up
-        icon.removeClass('bi-volume-mute-fill').addClass('bi-volume-up-fill');
-        // Update ARIA label
-        $('#audio-control-button').attr('aria-label', 'Mute Music');
-      }
-    }
-
-    // Save user preference to localStorage
-    localStorage.setItem('isMuted', isMuted);
-  });
-
-  // ------------- LANGUAGE SWITCHING FUNCTIONALITY ------------- //
-  // Function to switch languages
-  function switchLanguage(lang) {
-    const elements = document.querySelectorAll('[data-lang]');
-    elements.forEach(el => {
-      if (el.getAttribute('data-lang') === lang) {
-        el.style.display = 'block';
-      } else {
-        el.style.display = 'none';
-      }
-    });
-  }
+  // // ------------- LANGUAGE SWITCHING FUNCTIONALITY ------------- //
+  // // Function to switch languages
+  // function switchLanguage(lang) {
+  //   const elements = document.querySelectorAll('[data-lang]');
+  //   elements.forEach(el => {
+  //     if (el.getAttribute('data-lang') === lang) {
+  //       el.style.display = 'block';
+  //     } else {
+  //       el.style.display = 'none';
+  //     }
+  //   });
+  // }
 
   // Optional: Set default language based on browser settings or user preference
 });
