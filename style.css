@@ -91,14 +91,14 @@ section {
 .middle-content {
   opacity: 0;
   animation: fadeIn 1s forwards;
-  animation-delay: 3s; /* Starts after sloka typing */
+  animation-delay: 2s; /* Starts after sloka typing */
 }
 
 /* Apply Fade In to Bottom Content */
 .bottom-content {
   opacity: 0;
   animation: fadeIn 1s forwards;
-  animation-delay: 4s; /* Starts after names and timer fade in */
+  animation-delay: 2.5s; /* Starts after names and timer fade in */
 }
 
 /* Profile Images */
@@ -329,8 +329,6 @@ h2, h3 {
   }
 }
 
-
-
 .neomorphic-btn {
   display: inline-block;
   text-decoration: none;
@@ -388,10 +386,10 @@ h2, h3 {
 /* Extensions for Buttons */
 .audio-extension, .translate-extension {
   position: fixed;
-  bottom: 20px;
-  background: rgba(0,0,0,0.5);
-  color: #FFD700;
-  padding: 8px 15px;
+  bottom: 30px;
+  background: rgb(255, 255, 255);
+  color: #000000;
+  padding: 4px 7px;
   border-radius: 20px;
   font-weight: bold;
   font-size: 0.9rem;

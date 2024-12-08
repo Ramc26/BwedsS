@@ -26,6 +26,9 @@
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+  <!-- Add Calender Event -->
+  <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
 </head>
 <body>
   <!-- Floating Translate Button -->
@@ -77,7 +80,40 @@
           <div class="timer-box d-inline-block">
             <p class="timer-text" id="timer"></p>
           </div>
-          <p class="mt-3">Save the date !! / Add to calender !!</p>
+          <!-- "Add to Calendar" button with neomorphic styling -->
+          <center><add-to-calendar-button 
+            name="Bharathi ♥ Surya"
+            description="Bharathi and Surya joyfully invite you to celebrate their wedding day. Join us as we begin this beautiful journey together, surrounded by love, laughter, and the blessings of family and friends."
+            startDate="2025-02-20"
+            startTime="19:00"
+            endDate="2025-02-21"
+            endTime="07:00"
+            timeZone="Asia/Calcutta"
+            location="Alluri Seetha Rama Raju Kalyana Mandapam, Jaggampeta"
+            options="'Apple','Google','iCal','Outlook.com','Yahoo'"
+            buttonStyle="neumorphism"
+            hideTextLabelButton
+            hideTextLabelList
+            buttonsList
+            hideBackground
+            hideCheckmark
+            size="4"
+            label="Save The Date !!"
+            lightMode="bodyScheme"
+            pastDateHandling="disable"
+          ></add-to-calendar-button></center>
+          <div class="text-center mt-4">
+            <!-- <div title="Add to Calendar" class="addeventatc neomorphic-btn-cal" data-dropdown-y="up">
+              Save The Date!!
+              <span class="start">2025-02-20 07:00 PM</span>
+              <span class="end">2025-02-21 06:00 AM</span>
+              <span class="timezone">Asia/Kolkata</span>
+              <span class="title">Bharathi Weds Surya</span>
+              <span class="description">Bharathi and Surya joyfully invite you to celebrate their wedding day. Join us as we begin this beautiful journey together, surrounded by love, laughter, and the blessings of family and friends.</span>
+              <span class="location">Alluri Seetha Ramaraju Kalyana Mandapam, Jaggampeta</span>
+              <span class="alarm_reminder">1440</span>
+            </div>             -->
+          </div>
         </div>
       </div>
       
@@ -146,7 +182,7 @@
         </div>
       </div>
       <div class="mt-4">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4819.244673951328!2d82.04319699999999!3d17.183837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDExJzAxLjgiTiA4MsKwMDInMzUuNSJF!5e1!3m2!1sen!2sin!4v1733472385696!5m2!1sen!2sin" allowfullscreen class="w-100" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1204.838744245566!2d82.04829505339346!3d17.179595848787876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3779f655eb44bf%3A0xf8c6e93411641bf6!2sSRI%20ALLURI%20SEETHA%20RAMA%20RAJU%20KALYANA%20MANDAPAM!5e1!3m2!1sen!2sin!4v1733637914332!5m2!1sen!2sin" allowfullscreen class="w-100" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>

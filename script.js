@@ -17,7 +17,7 @@ $(document).ready(function() {
   setTimeout(function() {
     $('.audio-extension').removeClass('show-extension');
     $('.translate-extension').removeClass('show-extension');
-  }, 5500); // Hide after 5 seconds visible (total 5.5s)
+  }, 10000); // Hide after 5 seconds visible (total 5.5s)
 
   // AUDIO CONTROL BUTTON FUNCTIONALITY (original logic retained)
   $('#audio-control-button').on('click', function() {
@@ -83,7 +83,7 @@ $(document).ready(function() {
       `ఇయం సీత మమ సుతా సహ ధర్మచారిణి తవ।
 ప్రతిచ్ఛ చేను భద్రం తే పాణిం గృహ్ణీష్వ పాణినా॥`
     ],
-    typeSpeed: 30,        // Typing speed in milliseconds
+    typeSpeed: 15,        // Typing speed in milliseconds
     backSpeed: 0,         // No backspacing needed
     showCursor: false,    // Hide the cursor
     smartBackspace: false, // Disable smart backspace
@@ -100,4 +100,56 @@ $(document).ready(function() {
       $('#audio-control-button, .translate-button').fadeIn(500); // Fade them in over 0.5s
     }
   });
+
+
+  document.getElementById('addToCalendarBtn').addEventListener('click', function() {
+    // Event details
+    const eventName = "Bharathi & Surya's Wedding";
+    const eventDescription = "Wedding Invitation";
+    const eventLocation = "Alluri SitaRamaraju Kalyana Mandapam, Jaggampeta";
+    
+    // Start/End times in UTC format (ICS requires UTC)
+    // Event Start: 2025-02-21 05:05 AM local time
+    // Adjust to UTC if needed. For simplicity, assume given time is UTC or your desired time zone.
+    // Format: YYYYMMDDTHHMMSSZ (Z indicates UTC)
+    const start = "20250221T050500Z"; 
+    // Assuming a 2-hour event
+    const end = "20250221T070500Z"; 
+  
+    const uid = "bharathi-surya-wedding-" + Date.now() + "@example.com";
+    
+    // ICS content
+    const icsContent = 
+  `BEGIN:VCALENDAR
+  VERSION:2.0
+  PRODID:-//YourOrg//YourApp//EN
+  BEGIN:VEVENT
+  UID:${uid}
+  DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z'}
+  DTSTART:${start}
+  DTEND:${end}
+  SUMMARY:${eventName}
+  LOCATION:${eventLocation}
+  DESCRIPTION:${eventDescription}
+  END:VEVENT
+  END:VCALENDAR`;
+  
+    // Create a Blob from the ICS content
+    const blob = new Blob([icsContent], { type: 'text/calendar' });
+  
+    // Create a temporary link to download the file
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = "Bharathi_Surya_Wedding.ics";
+    document.body.appendChild(a);
+    a.click();
+  
+    // Clean up the URL object
+    setTimeout(function() {
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, 0);
+  });
+  
 });
