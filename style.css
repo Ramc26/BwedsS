@@ -417,3 +417,71 @@ h2, h3 {
   opacity: 1;
   transform: translateX(0);
 }
+
+
+/* Add ripple effect for floating buttons */
+.audio-control-button,
+.translate-button {
+  position: fixed;
+  bottom: 20px; /* Keep buttons at the bottom of the page */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  outline: none;
+  z-index: 1000; /* Ensure buttons are above other elements */
+  color: #FFD700; /* Gold color */
+  transition: background 0.3s, transform 0.3s;
+  overflow: hidden; /* Needed for the ripple effect */
+}
+
+.audio-control-button:hover,
+.translate-button:hover {
+  background: rgba(0, 0, 0, 0.7); /* Slightly darker on hover */
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Ripple Effect */
+.audio-control-button::before,
+.translate-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgb(255, 217, 0); /* Light gold ripple color */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: ripple-animation 2s infinite;
+}
+
+@keyframes ripple-animation {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 150%;
+    height: 150%;
+    opacity: 0;
+  }
+}
+
+/* Translate Button Positioning */
+.translate-button {
+  left: 20px; /* Position on the left */
+}
+
+/* Audio Button Positioning */
+.audio-control-button {
+  right: 20px; /* Position on the right */
+}
+
+/* Focus Styles for Accessibility */
+.audio-control-button:focus,
+.translate-button:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); /* Gold focus ring */
+}
