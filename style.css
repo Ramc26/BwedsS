@@ -1,4 +1,6 @@
 /* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
@@ -421,6 +423,7 @@ h2, h3 {
 
 /* Add ripple effect for floating buttons */
 .audio-control-button,
+.mute-toggle-button,
 .translate-button {
   position: fixed;
   bottom: 20px; /* Keep buttons at the bottom of the page */
@@ -437,6 +440,7 @@ h2, h3 {
 }
 
 .audio-control-button:hover,
+.mute-toggle-button:hover,
 .translate-button:hover {
   background: rgba(0, 0, 0, 0.7); /* Slightly darker on hover */
   transform: scale(1.1); /* Slight zoom on hover */
@@ -444,6 +448,7 @@ h2, h3 {
 
 /* Ripple Effect */
 .audio-control-button::before,
+.mute-toggle-button:before,
 .translate-button::before {
   content: '';
   position: absolute;
@@ -482,6 +487,7 @@ h2, h3 {
 
 /* Focus Styles for Accessibility */
 .audio-control-button:focus,
+.mute-toggle-button:focus,
 .translate-button:focus {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); /* Gold focus ring */
 }
@@ -522,4 +528,111 @@ h2, h3 {
   .footer p {
     font-size: 0.6rem;
   }
+}
+
+
+
+/* Add any additional CSS for modal if needed */
+.modal-content {
+  border-radius: 15px;
+  background: #39375B;
+  color: ivory;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  border-bottom: none;
+  text-align: center;
+  font-family: "Rye", serif;
+}
+.modal-title{
+  font-size: 3rem;
+  color: #FFDF00;
+}
+.modal-img{
+  width: 100%;
+  float: center;
+}
+
+.modal-body {
+  font-size: 1.2rem;
+}
+
+#startInvitation {
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #FFD700;
+  color: #39375B;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+#startInvitation:hover {
+  transform: scale(1.05);
+  background-color: #F5B0CB;
+  color: ivory;
+}
+
+.book-open {
+  animation: bookOpen 1s forwards ease-in-out;
+}
+
+@keyframes bookOpen {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  /* 50% {
+    transform: scaleX(0.5);
+    opacity: 0.5;
+  } */
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* Fade-in animation for modal text */
+.modal-greeting {
+  opacity: 0;
+  animation: fadeInText 1.5s forwards ease-in-out;
+  animation-delay: 1s;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Mute/Unmute Button Styling */
+.mute-toggle-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  outline: none;
+  z-index: 1000;
+  color: #FFD700;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.mute-toggle-button:hover {
+  background: rgba(0,0,0,0.7);
+  transform: scale(1.1);
+}
+
+/* Ensure icons remain visible above ripple (if ripple needed) */
+.mute-toggle-button > i {
+  position: relative;
+  z-index: 1;
 }

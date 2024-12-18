@@ -17,22 +17,24 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
+  
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+  
   <!-- Noto Sans Telugu & Anek Telugu -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&family=Anek+Telugu:wght@100..800&display=swap" rel="stylesheet">
-
+  
   <!-- Playfair Display & Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+
   <!-- Add Calendar Event -->
   <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
   <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
@@ -43,33 +45,47 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-QRDPHYW8W0');
   </script>
+
   <!-- Lottie Files -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
 </head>
 <body>
-  <!-- Preloader Animation
-  <div id="preloader" class="position-fixed w-100 h-100 d-flex justify-content-center align-items-center" style="background-color: rgba(57, 55, 91, 0.9); z-index: 9999; top: 0; left: 0;">
-    <lottie-player src="https://lottie.host/bac6ffe6-2e55-473e-803a-2802ff164d42/iW7LDLA7Hc.json" background="#FFFFFF" speed="1" style="width: 300px; height: 300px" loop autoplay></lottie-player>
-  </div> -->
+
+  <!-- Modal Pop-up for Welcome -->
+  <div id="welcomeModal" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered book-open">
+      <div class="modal-content text-center bg-dark text-white" style="border-radius: 15px;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title w-100">Namaskaram!</h5><br>
+        </div>
+        <img src="images/modal.png" alt="modalpng" class="modal-img">
+        <div class="modal-body">
+          <p class="modal-greeting">Step into this joyful union of love and blessings—come celebrate with us in warmth, laughter, and divine grace 💖✨</p>
+          <button id="startInvitation" class="btn btn-warning mt-3">Open Invitation</button><br><br>
+          <p style="font-size: x-small; color: brown;">**This page plays Audio. Use the Mute button at the bottom-right</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Floating Translate Button -->
   <a href="https://ramc26-github-io.translate.goog/BwedsS/?_x_tr_sl=en&_x_tr_tl=te"
   target="_blank"
   class="translate-button ripple-effect"
   aria-label="Translate to Telugu">
-  <i class="bi bi-translate"></i>
+    <i class="bi bi-translate"></i>
   </a>
   <div class="translate-extension">Translate</div>
 
-  <!-- Floating Play/Mute Button -->
+  <!-- Background Audio -->
   <audio id="my_audio" src="images/audio.mp3" loop></audio>
-  <button id="audio-control-button" class="audio-control-button ripple-effect" aria-label="Play Music">
-    <i id="audio-icon" class="bi bi-play-fill"></i>
+
+  <!-- Mute/Unmute Button (Hidden initially) -->
+  <button id="mute-toggle-button" class="mute-toggle-button d-none" aria-label="Mute/Unmute Audio">
+    <i class="bi bi-volume-up-fill"></i>
   </button>
-  <div class="audio-extension">Play Music</div>
 
   <!-- 1. Welcome Section -->
   <section id="welcome" class="vh-100 d-flex flex-column text-white text-center position-relative">
@@ -226,6 +242,7 @@
             <img src="images/photo6.jpg" class="d-block w-100 carousel-image" alt="Moment 6">
           </div>
         </div>
+        <!-- Carousel Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -297,51 +314,22 @@
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer class="footer text-center py-4">
-    <div class="container">
-      <p>Brought to you with love and warmth by <a href="https://ramc26.github.io/RamTechSuite" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="bi bi-person-badge"></i> itsmeramc</a>. Your presence is our joy! 💖✨</p>
-      <p class="mb-0"><i class="bi bi-c-circle"></i> 2025 Bharathi & Surya. All rights reserved.</p>
-    </div>
-  </footer>
+<!-- Footer Section -->
+<footer class="footer text-center py-4">
+  <div class="container">
+    <p>Brought to you with care by <a href="https://ramc26.github.io/RamTechSuite" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="bi bi-person-badge"></i> itsmeramc</a>. Your presence is our joy! 💖✨</p>
+    <p class="mb-0"><i class="bi bi-c-circle"></i> 2025 Bharathi & Surya. All rights reserved.</p>
+  </div>
+</footer>
 
-  <script>
-    // Ensure DOM elements are fully loaded
-    document.addEventListener('DOMContentLoaded', function () {
-      // Preloader logic
-      const preloader = document.getElementById('preloader');
-      if (preloader) {
-        window.addEventListener('load', function () {
-          preloader.style.display = 'none';
-        });
-      }
-
-      // Audio play logic
-      const audioButton = document.getElementById('audio-control-button');
-      const audioElement = document.getElementById('my_audio');
-
-      if (audioButton && audioElement) {
-        let isPlaying = false;
-        audioButton.addEventListener('click', function () {
-          if (!isPlaying) {
-            audioElement.play().then(() => {
-              isPlaying = true;
-              audioButton.querySelector('i').classList.replace('bi-play-fill', 'bi-volume-up-fill');
-            }).catch((error) => {
-              console.error('Audio play failed:', error);
-            });
-          } else {
-            audioElement.pause();
-            isPlaying = false;
-            audioButton.querySelector('i').classList.replace('bi-volume-up-fill', 'bi-play-fill');
-          }
-        });
-      }
-    });
-  </script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="script.js"></script>
+<!-- JS Scripts -->
+<!-- jQuery first -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Then Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Typed.js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<!-- Custom JS -->
+<script src="script.js"></script>
 </body>
 </html>
